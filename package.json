@@ -1,0 +1,20 @@
+{
+  "name": "wx-card",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.51qiyuan.cn/wisdom_business_platform/app_wisdom_business_platform.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async-validator": "^3.5.1",
+    "dayjs": "^1.9.6"
+  }
+}
