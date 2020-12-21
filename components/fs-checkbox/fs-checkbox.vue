@@ -32,7 +32,9 @@
 		inject: ['checkboxGroup'],
 		data() {
 			return {
-				selected: this.checked
+				selected: this.checked,
+				reverse: false,
+				justify: ''
 			};
 		},
 		created() {

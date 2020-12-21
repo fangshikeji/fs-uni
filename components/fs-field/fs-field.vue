@@ -1,5 +1,5 @@
 <template>
-	<view class="field" :class="{tighten}">
+	<view class="field" :class="{tighten,round,opacity}">
 		<view class="field-textarea" v-if="type === 'textarea'" :style="{height: textareaHeight}">
 			<view class="label" :style="{width:labelWidth}" v-if="label">
 				<view v-if="required" class="required">*</view>
@@ -68,14 +68,10 @@
 		computed: {
 			cls(data) {
 				const {
-					round,
-					opacity,
 					border
 				} = data
 				const classNames = []
 
-				round && classNames.push('round')
-				opacity && classNames.push('opacity')
 				border && classNames.push('border')
 
 				return classNames.join(' ')

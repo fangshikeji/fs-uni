@@ -1,7 +1,7 @@
 <template>
 	<view class="radio" :class="[justify,{reverse}]" @tap="toggle">
-	  <fs-icon v-if="icon" source="out" :type="icon" :color-type="selected ? checkedColorType : 'gray'" :size="iconSize"></fs-icon>
-	  <fs-icon v-else :type="selected ? 'icon-checked' : 'icon-uncheck'" :color-type="selected ? checkedColorType : 'gray'" :size="iconSize"></fs-icon>
+	  <fs-icon v-if="icon" source="out" :type="icon" :color-type="selected ? checkedColorType : 'gray'" :size="iconSize" :color="checkedColor"></fs-icon>
+	  <fs-icon v-else :type="selected ? 'icon-checked' : 'icon-uncheck'" :color-type="selected ? checkedColorType : 'gray'" :size="iconSize" :color="checkedColor"></fs-icon>
 	  <view class="lable">
 	    {{label}}
 	    <slot />
@@ -29,7 +29,9 @@
 		inject: ['radioGroup'],
 		data() {
 			return {
-				selected: this.checked
+				selected: this.checked,
+				reverse: false,
+				justify: ''
 			};
 		},
 		created() {

@@ -18,20 +18,20 @@
 	export default {
 		data() {
 			return {
-				vList: []
+				vList: [
+					{
+						number: '2.0',
+						vdata: '2020/11/10',
+						content: '版本内容'
+					},
+					{
+						number: '1.0',
+						vdata: '2020/10/10',
+						content: '版本内容'
+					}
+				]
 			};
 		},
-		onLoad() {
-			getVersionList({
-				pageNo: 1,
-				pageSize: 20
-			}).then(res => {
-				this.vList = res.data || []
-				this.vList.forEach(item => {
-					item.vdata = dayjs(item.publishDate).format('YYYY/MM/DD')
-				})
-			})
-		}
 	}
 </script>
 

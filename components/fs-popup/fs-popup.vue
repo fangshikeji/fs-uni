@@ -1,10 +1,10 @@
 <template>
-	<cover-view class="popup">
-		<cover-view class="popup-drawer" :class="[direction,{show}]" :style="style">
+	<view class="popup">
+		<view class="popup-drawer" :class="[direction,{show}]" :style="style">
 			<slot></slot>
-		</cover-view>
-		<cover-view class="popup-layer" v-if="show && showMask" @click="close"></cover-view>
-	</cover-view>
+		</view>
+		<view class="popup-layer" v-if="show && showMask" @click="close"></view>
+	</view>
 </template>
 
 <script>

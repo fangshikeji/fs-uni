@@ -1,12 +1,12 @@
 <template>
 	<fs-popup direction="bottom" height="auto" :show="show" @update:show="cancel" :showMask="showMask" :maskClickable="maskClickable">
-		<cover-view class="action">
-			<cover-view class="action-item" v-for="item in list" @click="handleAction(item)">{{item.name}}</cover-view>
-			<cover-view class="action-extra">
+		<view class="action">
+			<view class="action-item" v-for="item in list" @click="handleAction(item)">{{item.name}}</view>
+			<view class="action-extra">
 				<slot></slot>
-			</cover-view>
-			<cover-view class="cancel" v-if="showCancel" @click="cancel">{{cancelText}}</cover-view>
-		</cover-view>
+			</view>
+			<view class="cancel" v-if="showCancel" @click="cancel">{{cancelText}}</view>
+		</view>
 	</fs-popup>
 </template>
 

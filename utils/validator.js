@@ -1,11 +1,3 @@
-// isPhone (phone) {
-//     return /^1[3456789]\d{9}$/.test(phone)
-//   }
-
-//   isZh (value, range = [2, 5]) { //是否是汉字
-//     return new RegExp(`^[\u4E00-\u9FA5]{${range[0]},${range[1]}}$`).test(value)
-//   }
-
 const validator = {
 	mobile(rule, value, callback) {
 		if(!/^1[3456789]\d{9}$/.test(value)) {
