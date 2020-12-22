@@ -5,7 +5,7 @@
 			<view class="layout-box radius-lg top-box">
 				<view class="user-info">
 					<fs-avatar size="140rpx" :src="userInfo.photo" v-if="userInfo.name"></fs-avatar>
-					<fs-avatar size="140rpx" v-else link="../login/login" border>去登录</fs-avatar>
+					<fs-avatar size="140rpx" v-else link="./login" border>去登录</fs-avatar>
 					<view class="content">
 						<text class="vm">{{userInfo.name}}</text>
 						<fs-icon type="icon-sex-male" color="#2285FF" style="margin-left: 10rpx;" v-if="userInfo.sex === '1'"></fs-icon>

@@ -175,6 +175,22 @@ view{
   -webkit-overflow-scrolling: touch;
 }
 
+.title-hd{
+	padding: 20rpx;
+	position: relative;
+	
+	&::before{
+		position: absolute;
+		content: '';
+		width: 3px;
+		height: 13px;
+		background-color: #3A375B;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
 .inline-block{
 	display: inline-block;
 }
