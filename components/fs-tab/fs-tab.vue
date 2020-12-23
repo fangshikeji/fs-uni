@@ -12,6 +12,9 @@
 
 <script>
 	export default {
+		model: {
+			prop: 'active'
+		},
 		props: {
 			color: String,
 			bgColor: {
@@ -64,7 +67,7 @@
 		},
 		methods: {
 			setActive(index) {
-				this.$emit('update:active', index)
+				this.$emit('input', index)
 				this.$emit('change', index)
 			},
 		}

@@ -1,5 +1,5 @@
 <template>
-	<view class="avatar" :class="[shape, {border, radius}]" :style="{width: width || size,height: height || size}" @click="handleLink">
+	<view class="avatar" :class="[shape, {border, radius, fixed}]" :style="{width: width || size,height: height || size,right: fixed ? right : 0,bottom: fixed ? bottom : 0}" @click="handleLink">
 		<image class="img" :src="src" v-if="src" :lazy-load="lazyLoad" :mode="imageMode" />
 		<view v-else class="avatar-slot" :class="['bg-' + colorType]" :style="{backgroundColor:bgColor}">
 			<slot></slot>
@@ -39,6 +39,15 @@
 				type: String,
 				default: 'navigateTo'
 			},
+			fixed: Boolean,
+			right: {
+				type: String,
+				default: '30rpx'
+			},
+			bottom: {
+				type: String,
+				default: '30rpx'
+			}
 		},
 		data() {
 			return {
@@ -94,5 +103,9 @@
 
 	.border {
 		border: 4rpx solid #fff;
+	}
+	
+	.fixed{
+		position: fixed;
 	}
 </style>

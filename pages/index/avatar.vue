@@ -49,6 +49,8 @@
 		    </view>
 		  </fs-cell>
 		</fs-panel>
+		
+		<fs-avatar fixed size="100rpx">悬浮</fs-avatar>
 	</view>
 </template>
 

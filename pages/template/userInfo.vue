@@ -21,15 +21,13 @@
 
 <script>
 	import avatar from "@/business/avatar.vue"
-	import uploadFace from "@/business/uploadFace.vue"
 	import { login } from "@/services/common.js"
 	import { mapState, mapMutations } from 'vuex'
 	import mixin from "@/utils/mixin.js"
 	import utils from "@/utils/utils.js"
 	export default {
 		components: {
-			avatar,
-			uploadFace
+			avatar
 		},
 		mixins: [mixin],
 		provide() {
@@ -70,14 +68,6 @@
 					})
 				})
 			},
-			uploadFace() {
-				utils.chooseAndUploadFace({
-					count: this.count
-				}).then(res => {
-					this.userInfo.facePhoto = res[0]
-					this.setUserInfo(this.userInfo)
-				})
-			}
 		},
 	}
 </script>
