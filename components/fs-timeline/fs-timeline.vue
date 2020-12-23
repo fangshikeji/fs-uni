@@ -2,7 +2,9 @@
 	<view class="timeline">
 		<view class="timeline-item" :class="[colorType]" :style="styleStr" v-for="(item, index) in options">
 			<view class="dot-box">
-				<slot name="dot" :item="item" :index="index"><view class="dot"></view></slot>
+				<slot name="dot" :item="item" :index="index">
+					<view class="dot" :class="index === 0 ? activeColorType : ''" :style="{color: index === 0 ? activeColor : ''}"></view>
+				</slot>
 			</view>
 			<view class="content"><slot :item="item" :index="index"></slot></view>
 		</view>
@@ -16,7 +18,10 @@
 			colorType: String,
 			color: String,
 			activeColor: String,
-			activeColorType: String
+			activeColorType: {
+				type: String,
+				default: 'primary'
+			}
 		},
 		data() {
 			return {

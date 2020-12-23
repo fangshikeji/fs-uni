@@ -17,7 +17,8 @@
 		  <fs-cell slot="content" border arrow link="./avatar" title="Avatar 头像"></fs-cell>
 		  <fs-cell slot="content" border arrow link="./badge" title="Badge 徽章"></fs-cell>
 		  <fs-cell slot="content" border arrow link="./popup" title="Popup 弹出层"></fs-cell>
-		  <fs-cell slot="content" arrow link="./tab" title="Tab 标签页"></fs-cell>
+		  <fs-cell slot="content" border arrow link="./tab" title="Tab 标签页"></fs-cell>
+		  <fs-cell slot="content" arrow link="./timeline" title="Timeline 时间轴"></fs-cell>
 		</fs-panel>
 		
 		<fs-panel title="表单组件">

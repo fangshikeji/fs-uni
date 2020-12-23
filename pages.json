@@ -211,6 +211,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/index/timeline",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "时间轴",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
