@@ -3,13 +3,13 @@
 		<fs-panel title="一般按钮">
 		  <fs-row slot="content" gutter="10">
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" bind:tap="test">button</fs-button>
+		      <fs-button class="mb" bind:tap="test">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" type="primary">button</fs-button>
+		      <fs-button class="mb" type="primary">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" type="success">button</fs-button>
+		      <fs-button class="mb" type="success">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
 		      <fs-button type="error">button</fs-button>
@@ -26,13 +26,13 @@
 		<fs-panel title="幽灵按钮">
 		  <fs-row slot="content" gutter="10">
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" plain>button</fs-button>
+		      <fs-button class="mb" plain>button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" plain type="primary">button</fs-button>
+		      <fs-button class="mb" plain type="primary">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" plain type="success">button</fs-button>
+		      <fs-button class="mb" plain type="success">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
 		      <fs-button plain type="error">button</fs-button>
@@ -49,16 +49,16 @@
 		<fs-panel title="带圆角按钮">
 		  <fs-row slot="content" gutter="10">
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" radius>button</fs-button>
+		      <fs-button class="mb" radius>button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" radius type="primary">button</fs-button>
+		      <fs-button class="mb" radius type="primary">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" radius type="success">button</fs-button>
+		      <fs-button class="mb" radius type="success">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" radius type="warning">button</fs-button>
+		      <fs-button radius type="warning">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
 		      <fs-button radius plain type="error">button</fs-button>
@@ -72,22 +72,22 @@
 		<fs-panel title="半圆按钮">
 		  <fs-row slot="content" gutter="10">
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" round>button</fs-button>
+		      <fs-button class="mb" round>button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" round type="primary">button</fs-button>
+		      <fs-button class="mb" round type="primary">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" round type="success">button</fs-button>
+		      <fs-button class="mb" round type="success">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" round type="warning">button</fs-button>
+		      <fs-button class="mb" round type="warning">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button round plain type="error">button</fs-button>
+		      <fs-button class="mb" round plain type="error">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button round plain type="info">button</fs-button>
+		      <fs-button class="mb" round plain type="info">button</fs-button>
 		    </fs-col>
 		    <fs-col col="12">
 		      <fs-button round block type="primary">button</fs-button>
@@ -98,28 +98,28 @@
 		<fs-panel title="不同尺寸按钮">
 		  <fs-row slot="content">
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" size="mini" type="primary">button</fs-button>
+		      <fs-button size="mini" type="primary">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" type="primary">button</fs-button>
+		      <fs-button type="primary">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button gutter="10rpx" size="medium" type="primary">button</fs-button>
+		      <fs-button size="medium" type="primary">button</fs-button>
 		    </fs-col>
 		  </fs-row>
 		</fs-panel>
 		
 		<fs-panel title="块状按钮">
 		  <view slot="content">
-				<fs-button gutter="10rpx" block type="primary">button</fs-button>
-				<fs-button gutter="10rpx" block plain type="success">button</fs-button>
+				<fs-button block type="primary">button</fs-button>
+				<fs-button block plain type="success">button</fs-button>
 			</view>
 		</fs-panel>
 		
 		<fs-panel title="通屏按钮">
 		  <view slot="content">
-				<fs-button gutter="10rpx" block full type="primary">button</fs-button>
-				<fs-button gutter="10rpx" block full plain type="success">button</fs-button>
+				<fs-button block full type="primary">button</fs-button>
+				<fs-button block full plain type="success">button</fs-button>
 			</view>
 		</fs-panel>
 		
@@ -162,5 +162,9 @@
 <style lang="scss">
 page{
   text-align: center;
+}
+.mb{
+	margin-bottom: 20rpx;
+	display: inline-block;
 }
 </style>

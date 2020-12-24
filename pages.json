@@ -220,6 +220,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/layout/layout",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "常见布局",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -231,6 +240,10 @@
 		"list": [{
 				"pagePath": "pages/index/index",
 				"text": "首页"
+			},
+			{
+				"pagePath": "pages/layout/layout",
+				"text": "常见布局"
 			},
 			{
 				"pagePath": "pages/utils/utils",
