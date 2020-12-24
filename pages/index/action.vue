@@ -4,8 +4,8 @@
 			<fs-button type="primary" @click="toggle('show')">action</fs-button>
 			<fs-button type="error" @click="toggle('show1')">action</fs-button>
 		</fs-button-group>
-		<fs-action :list="list" :show.sync="show" @itemTap="itemTap"></fs-action>
-		<fs-action :show.sync="show1" :showCancel="false">
+		<fs-action :list="list" v-model="show" @itemTap="itemTap"></fs-action>
+		<fs-action v-model="show1" :showCancel="false">
 			<fs-cell title="action" value="custom content" border></fs-cell>
 			<fs-cell title="action" value="custom content"></fs-cell>
 		</fs-action>

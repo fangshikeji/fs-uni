@@ -1,5 +1,5 @@
 <template>
-	<fs-popup direction="bottom" height="auto" :show="show" @update:show="cancel" :showMask="showMask" :maskClickable="maskClickable">
+	<fs-popup direction="bottom" height="auto" v-model="show" :showMask="showMask" :maskClickable="maskClickable">
 		<view class="action">
 			<view class="action-item" v-for="item in list" @click="handleAction(item)">{{item.name}}</view>
 			<view class="action-extra">
@@ -14,7 +14,7 @@
 	export default {
 		props: {
 			list: Array,
-			show: Boolean,
+			value: Boolean,
 			showMask: {
 				type: Boolean,
 				default: true
@@ -37,9 +37,19 @@
 
 			};
 		},
+		computed: {
+			show: {
+				get() {
+					return this.value
+				},
+				set(val) {
+					this.$emit('input', val)
+				}
+			}
+		},
 		methods: {
 			cancel() {
-				this.$emit('update:show', false)
+				this.$emit('input', false)
 			},
 			handleAction(item) {
 				this.$emit('itemTap',item)

@@ -1,16 +1,16 @@
 <template>
 	<view class="popup">
-		<view class="popup-drawer" :class="[direction,{show}]" :style="style">
+		<view class="popup-drawer" :class="[direction,{show:value}]" :style="style">
 			<slot></slot>
 		</view>
-		<view class="popup-layer" v-if="show && showMask" @click="close"></view>
+		<view class="popup-layer" v-if="value && showMask" @click="close"></view>
 	</view>
 </template>
 
 <script>
 	export default {
 		props: {
-			show: Boolean,
+			value: Boolean,
 			direction: {
 				type: String,
 				default: 'left'
@@ -51,7 +51,7 @@
 		methods: {
 			close() {
 				if(this.maskClickable) {
-					this.$emit('update:show', false)
+					this.$emit('input', false)
 				}
 			}
 		}

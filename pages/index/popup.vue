@@ -5,22 +5,22 @@
 		<fs-button type="primary" @click="popup('showPopup3')">左弹出</fs-button>
 		<fs-button type="warning" @click="popup('showPopup4')">右弹出</fs-button>
 
-		<fs-popup :show.sync="showPopup1" direction="top">
+		<fs-popup v-model="showPopup1" direction="top">
 			<fs-panel title="内容自定义">
 				<fs-button slot="content" type="success" @click="close">关闭</fs-button>
 			</fs-panel>
 		</fs-popup>
-		<fs-popup :show.sync="showPopup2" direction="bottom">
+		<fs-popup v-model="showPopup2" direction="bottom">
 			<fs-panel title="内容自定义">
 				<fs-button slot="content" type="success" @click="close">关闭</fs-button>
 			</fs-panel>
 		</fs-popup>
-		<fs-popup :show.sync="showPopup3">
+		<fs-popup v-model="showPopup3">
 			<fs-panel title="内容自定义">
 				<fs-button slot="content" type="success" @click="close">关闭</fs-button>
 			</fs-panel>
 		</fs-popup>
-		<fs-popup :show.sync="showPopup4" direction="right" width="50%">
+		<fs-popup v-model="showPopup4" direction="right" width="50%">
 			<fs-panel title="内容自定义">
 				<fs-button slot="content" type="success" @click="close">关闭</fs-button>
 			</fs-panel>
