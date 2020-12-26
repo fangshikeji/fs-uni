@@ -1,16 +1,12 @@
 import dayjs from 'dayjs'
 import utils from '@/utils/utils.js'
 
-const mixin = {
+const commonMixin = {
 	data() {
 		return {
-			defaultAvatar: '/static/images/my/avatar.png',
 			pageSize: 20,
 			pageNo: 1
 		}
-	},
-	onReachBottom() {
-		
 	},
 	methods: {
 		formatDate(date, format = 'YYYY-MM-DD') {
@@ -25,4 +21,4 @@ const mixin = {
 		}
 	},
 }
-export default mixin
+export default commonMixin

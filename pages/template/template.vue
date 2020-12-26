@@ -68,9 +68,9 @@
 <script>
 	import { mapState, mapMutations } from 'vuex'
 	import utils from '@/utils/utils.js'
-	import mixin from "@/utils/mixin.js"
+	import commonMixin from "@/mixins/commonMixin.js"
 	export default {
-		mixins: [mixin],
+		mixins: [commonMixin],
 		data() {
 			return {
 				stats: {}

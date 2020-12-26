@@ -14,10 +14,10 @@
 
 <script>
 	// 具体api参考：https://github.com/iamkun/dayjs
-	import mixin from '@/utils/mixin.js'
+	import commonMixin from '@/mixins/commonMixin.js'
 	import dayjs from 'dayjs'
 	export default {
-		mixins: [mixin],
+		mixins: [commonMixin],
 		data() {
 			return {
 				date: new Date(),

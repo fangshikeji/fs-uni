@@ -44,7 +44,7 @@
 		<fs-gutter></fs-gutter>
 		<fs-grid :columnNum="2" gutter="20rpx">
 			<fs-grid-item v-for="item in 4">
-				<fs-image-cell direction="v" imageSrc="/static/images/temp.png" imageWidth="100%" imageHeight="200rpx" radius style="width: 100%;margin-right: 20rpx;">
+				<fs-image-cell direction="v" imageSrc="/static/images/temp.png" imageWidth="100%" imageHeight="200rpx" radius style="width: 100%;">
 					<view class="text-left">
 						<view class="line1">OI操作指南</view>
 						<view class="scroll-content-bd">2020/04/12 12:23</view>

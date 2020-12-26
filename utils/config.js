@@ -1,4 +1,4 @@
-const baseUrl = 'https://zhsw.sxzltech.com/'
+const baseUrl = ''
 
 const config = {
 	baseUrl,

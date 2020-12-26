@@ -23,13 +23,13 @@
 	import avatar from "@/business/avatar.vue"
 	import { login } from "@/services/common.js"
 	import { mapState, mapMutations } from 'vuex'
-	import mixin from "@/utils/mixin.js"
+	import commonMixin from "@/mixins/commonMixin.js"
 	import utils from "@/utils/utils.js"
 	export default {
 		components: {
 			avatar
 		},
-		mixins: [mixin],
+		mixins: [commonMixin],
 		provide() {
 			return {
 				parentForm: this

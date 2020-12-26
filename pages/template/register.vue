@@ -2,7 +2,7 @@
 	<view>
 		<fs-form>
 			<fs-field placeholder="请输入姓名" border v-model="name" focus></fs-field>
-			<captcha></captcha>
+			<captcha ref="captcha"></captcha>
 			<fs-field type="password" placeholder="请输入密码" maxlength=20 border v-model="password"></fs-field>
 			<fs-field type="password" placeholder="请再次输入密码" maxlength=20 border v-model="password2"></fs-field>
 
@@ -18,15 +18,12 @@
 	import captcha from '@/business/captcha.vue'
 	import { register } from '@/services/common.js'
 	import validator from '@/utils/validator.js'
+	import validatorMixin from '@/mixins/validatorMixin'
 	export default {
 		components: {
 			captcha
 		},
-		provide() {
-			return {
-				parentForm: this
-			}
-		},
+		mixins: [validatorMixin],
 		data() {
 			const validatePass2 = (rule, value, callback) => {
 				if (value === '') {
@@ -77,11 +74,11 @@
 			register() {
 				const registerData = {
 					name: this.name,
-					loginName: this.captchaCom.phone,
+					loginName: this.$refs.captcha.phone,
 					password: this.password,
-					code: this.captchaCom.code
+					code: this.$refs.captcha.code
 				}
-				this.form.validate({
+				this.validate({
 					...registerData,
 					password2: this.password2,
 				}, () => {

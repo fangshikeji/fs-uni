@@ -13,7 +13,9 @@
 	} from "@/services/common.js"
 
 	export default {
-		inject: ['parentForm'],
+		props: {
+			mobile: String
+		},
 		data() {
 			return {
 				phone: '',
@@ -23,8 +25,7 @@
 			}
 		},
 		created() {
-			this.phone = this.parentForm.phone
-			this.parentForm.captchaCom = this
+			this.phone = this.mobile
 		},
 		methods: {
 			getCaptcha() {

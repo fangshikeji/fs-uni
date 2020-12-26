@@ -1,7 +1,7 @@
 {
-  "name": "wx-card",
+  "name": "fs-uni",
   "version": "1.0.0",
-  "description": "",
+  "description": "由山西方是科技有限公司开发的一套uni-app的简单易用ui框架",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,11 @@
     "type": "git",
     "url": "http://git.51qiyuan.cn/wisdom_business_platform/app_wisdom_business_platform.git"
   },
-  "keywords": [],
+  "keywords": [
+		"uni-app",
+		"uni-app-ui",
+		"ui",
+	],
   "author": "",
   "license": "ISC",
   "dependencies": {
