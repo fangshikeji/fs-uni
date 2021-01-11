@@ -4,7 +4,7 @@
 			<view slot="content">
 			  <fs-cell border justify="right" :title="item.title" @click="selectProblem(index)" v-for="(item, index) in problemList">
 			    <view class="select" slot="value">
-						<fs-icon type="icon-right" colorType="primary" v-show="curProblemIndex === index"></fs-icon>
+						<fs-icon type="icon-right" colorType="primary" v-if="curProblemIndex === index"></fs-icon>
 			    </view>
 			  </fs-cell>
 			</view>
@@ -14,7 +14,9 @@
 			<view class="textarea-box" slot="content">
 				<fs-form textareaHeight="200rpx">
 					<fs-field type="textarea"  placeholder="请输入问题描述..." v-model="detail"></fs-field>
+				 <!-- #ifndef MP-ALIPAY -->
 				  <view class="input-num">{{detail.length}}/140</view>
+				 <!-- #endif -->
 				</fs-form>
 			</view>
 		</fs-panel>

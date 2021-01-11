@@ -12,9 +12,11 @@
 						<fs-icon type="icon-sex-female" colorType="error" style="margin-left: 10rpx;" v-if="userInfo.sex === '2'"></fs-icon>
 					</view>
 				</view>
-				<fs-avatar src="/static/images/temp/icon_21.png" size="45rpx" shape="square" class="edit" @click="authRoute('./userInfo')"></fs-avatar>
-				<view style="padding: 20rpx 0;margin-top: 100rpx;">
-					<fs-row class="text-center">
+				<view class="edit">
+					<fs-avatar src="/static/images/temp/icon_21.png" size="45rpx" shape="square" @click="authRoute('./userInfo')"></fs-avatar>
+				</view>
+				<view class="text-center" style="padding: 20rpx 0;margin-top: 100rpx;">
+					<fs-row>
 						<fs-col col="6">
 							<view @click="authRoute('./visitor/visitor')">
 								<view class="hd">{{stats.beVisitorNum || 0}}</view>
@@ -33,8 +35,8 @@
 			<fs-gutter></fs-gutter>
 			<view class="radius-lg bg-white">
 				<view class="title-hd bdb">常用工具</view>
-				<view style="padding: 20rpx 0;">
-					<fs-row class="text-center">
+				<view class="text-center" style="padding: 20rpx 0;">
+					<fs-row>
 						<fs-col col="3">
 							<view @click="authRoute('./invoice/invoice')">
 								<fs-avatar src="/static/images/temp/icon_13.png" size="80rpx"></fs-avatar>

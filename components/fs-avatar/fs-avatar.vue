@@ -1,5 +1,12 @@
 <template>
-	<view class="avatar" :class="[shape, {border, radius, fixed}]" :style="{width: width || size,height: height || size,right: fixed ? right : 0,bottom: fixed ? bottom : 0}" @click="handleLink">
+	<view class="avatar" 
+	:class="[
+		shape,
+		border ? 'border' : '',
+		radius ? 'radius' : '',
+		fixed ? 'fixed' : '',
+	]" 
+	:style="{width: width || size,height: height || size,right: fixed ? right : 0,bottom: fixed ? bottom : 0}" @click="handleLink">
 		<image class="img" :src="src" v-if="src" :lazy-load="lazyLoad" :mode="imageMode" />
 		<view v-else class="avatar-slot" :class="['bg-' + colorType]" :style="{backgroundColor:bgColor}">
 			<slot></slot>
@@ -31,7 +38,7 @@
 			lazyLoad: Boolean,
 			imageMode: {
 				type: String,
-				default: 'cover'
+				default: 'scaleToFill'
 			},
 			radius: Boolean,
 			link: String,
@@ -107,5 +114,7 @@
 	
 	.fixed{
 		position: fixed;
+		z-index: 50;
+		margin-bottom: var(--window-bottom);
 	}
 </style>

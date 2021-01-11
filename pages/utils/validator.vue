@@ -72,6 +72,7 @@
 		
 		methods: {
 			register() {
+				console.log(this.$refs);
 				const registerData = {
 					name: this.name,
 					loginName: this.$refs.captcha.phone,

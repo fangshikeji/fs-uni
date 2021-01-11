@@ -155,6 +155,7 @@
 		flex: 1;
 		box-sizing: border-box;
 		padding: 20rpx;
+		background: transparent;
 	}
 
 	.clearable {

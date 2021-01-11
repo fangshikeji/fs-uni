@@ -1,9 +1,11 @@
 <template>
 	<view class="divide-list">
 		<fs-grid :columnNum="list.length">
-			<fs-grid-item v-for="item in list" class="item">
-				<slot :item="item"></slot>
-			</fs-grid-item>
+			<view v-for="item in list" class="item">
+				<fs-grid-item>
+					<slot :item="item"></slot>
+				</fs-grid-item>
+			</view>
 		</fs-grid>
 	</view>
 </template>

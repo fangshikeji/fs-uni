@@ -101,11 +101,11 @@
 		      <fs-button size="mini" type="primary">button</fs-button>
 		    </fs-col>
 		    <fs-col col="4">
-		      <fs-button type="primary">button</fs-button>
-		    </fs-col>
-		    <fs-col col="4">
 		      <fs-button size="medium" type="primary">button</fs-button>
 		    </fs-col>
+				<fs-col col="4">
+				  <fs-button type="primary">button</fs-button>
+				</fs-col>
 		  </fs-row>
 		</fs-panel>
 		

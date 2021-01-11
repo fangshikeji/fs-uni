@@ -3,7 +3,17 @@
 	hover-class="hover" 
 	:open-type="openType" 
 	class="button"
-	:class="[cls, type, size, {selected: value,plain,radius,disabled,round,block}]"
+	:class="[
+		cls, 
+		type, 
+		size, 
+		plain ? 'plain' : '',
+		radius ? 'radius' : '',
+		round ? 'round' : '',
+		disabled ? 'disabled' : '',
+		block ? 'block' : '',
+		value ? 'selected' : ''
+	]"
 	:style="[{'margin-right':gutter,'margin-bottom':gutter,width:width},customStyle]" 
 	:form-type="formType" 
 	@getuserinfo="getUserInfo"
@@ -21,7 +31,10 @@
 		props: {
 			openType: String,
 			formType: String,
-			size: String,
+			size: {
+				type: String,
+				default: 'default'
+			},
 			type: {
 				type: String,
 				default: 'default'
@@ -125,16 +138,17 @@
 <style lang="scss" scoped>
 	.button {
 		font-weight: normal;
-		font-size: 13px;
+		font-size: 14px;
 		color: #fff;
-		padding: 0px 7px;
-		line-height: 30px;
+		padding: 0 40rpx;
+		line-height: 1;
 		text-align: center;
 		border-radius: 0;
 		display: inline-block;
 		vertical-align: bottom;
 		background-color: #CFCFCF;
 		margin: 0;
+		border: 0;
 		
 		&.primary, &.primary.selected,&.selected {
 			background-color: var(--primary);
@@ -158,17 +172,23 @@
 			color: #999999;
 		}
 		
+		&.default {
+			height: 80rpx;
+			line-height: 80rpx;
+		}
+		
 		&.medium {
-			width: 200rpx !important;
-			line-height: 70rpx !important;
-			min-height: 70rpx !important;
-			font-size: 14px;
+			width: auto !important;
+			height: 70rpx;
+			line-height: 70rpx;
+			font-size: 13px;
+			padding: 0 30rpx;
 		}
 		
 		&.mini {
 			width: auto !important;
-			line-height: 40rpx !important;
-			min-height: 40rpx !important;
+			height: 50rpx;
+			line-height: 50rpx;
 			font-size: 12px;
 			padding: 0 20rpx;
 			display: inline-block;
@@ -213,11 +233,12 @@
 
 	.block {
 		display: block;
-		line-height: 90rpx;
+		height: 100rpx !important;
+		line-height: 100rpx !important;
 		margin-left: var(--gutter) !important;
 		margin-right: var(--gutter) !important;
 		font-size: 17px;
-		width: auto !important;
+		width: auto;
 		
 		&.radius {
 			border-radius: 16rpx;

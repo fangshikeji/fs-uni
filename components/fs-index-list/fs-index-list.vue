@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<view class="sidebar" @tap="handleTap" @touchmove="handleMove" @touchend="handleEnd">
-			<view class="sidebar-item" :class="{primary: activeId === item}" v-for="(item, index) in sidebar" :key="index" :data-id="item">
+		<view class="sidebar" @touchmove="handleMove" @touchend="handleEnd">
+			<view class="sidebar-item" :class="{primary: activeId === item}" v-for="(item, index) in sidebar" :key="index" @tap="handleTap(item)">
 				{{item}}
 			</view>
 		</view>
@@ -97,8 +97,7 @@
 			})
 		},
 		methods: {
-			handleTap(e) {
-				const id = e.target.dataset.id
+			handleTap(id) {
 				this.intoView = id
 				this.activeId = id
 			},

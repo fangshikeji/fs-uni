@@ -44,7 +44,7 @@
 			},
 			imageMode: {
 				type: String,
-				default: 'cover'
+				default: 'scaleToFill'
 			},
 			link: String,
 			linkType: {

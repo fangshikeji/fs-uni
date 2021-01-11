@@ -4,9 +4,11 @@
 			<fs-icon type="icon-close" size="20px" color="#0F82FF" class="del" @click="deleteImg(index)"></fs-icon>
 			<fs-avatar :src="baseUrl + item " :shape="shape" :size="size" radius @click="previewImage(item)"></fs-avatar>
 		</view>
-		<fs-avatar :shape="shape" :size="size" radius bgColor="#EBEFF5" @click="upload" class="img-box" v-if="photoList.length < count">
-			<fs-icon type="icon-plus2" :size="iconSize"></fs-icon>
-		</fs-avatar>
+		<view class="img-box" v-if="photoList.length < count">
+			<fs-avatar :shape="shape" :size="size" radius bgColor="#EBEFF5" @click="upload">
+				<fs-icon type="icon-plus2" :size="iconSize"></fs-icon>
+			</fs-avatar>
+		</view>
 	</view>
 </template>
 

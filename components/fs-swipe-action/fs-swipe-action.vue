@@ -48,10 +48,20 @@
 		},
 		methods: {
 			getAreaRect() {
-				const query = uni.createSelectorQuery().in(this);
-				query.select('.swipe-box').boundingClientRect(data => {
+				const query = uni.createSelectorQuery().in(this)
+				// #ifdef MP-ALIPAY
+				uni.createSelectorQuery().select('.swipe-box').boundingClientRect(data => {
 					this.swipeViewWidth = data.width + this.allOptionWidth + 'px'
-				}).exec();
+				}).exec()
+				// #endif
+				
+				
+				// #ifndef MP-ALIPAY
+				query.select('.swipe-box').boundingClientRect(data => {
+					console.log(data);
+					this.swipeViewWidth = data.width + this.allOptionWidth + 'px'
+				}).exec()
+				// #endif
 			},
 			change(e) {
 				this.scrollX = e.detail.x

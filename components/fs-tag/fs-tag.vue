@@ -1,5 +1,14 @@
 <template>
-	<view class="tag" :class="[{round,plain,mark,'mark-reverse':markReverse},type, size]" :style="{color:color,backgroundColor:bgColor}">
+	<view class="tag" 
+	:class="[
+		round ? 'round' : '',
+		plain ? 'plain' : '',
+		mark ? 'mark' : '',
+		markReverse ? 'mark-reverse' : '',
+		type, 
+		size
+	]" 
+	:style="{color:color,backgroundColor:bgColor}">
 		<slot></slot>
 	</view>
 </template>

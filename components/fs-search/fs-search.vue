@@ -4,8 +4,12 @@
 			<view class="sub input" v-if="link">{{placeholder}}</view>
 			<input v-else :type="type" :placeholder="placeholder" @input="change" v-model="value" @focus="focus" @blur="blur" :focus="autoFocus"
 			 class="input" />
-			<uni-icons class="icon icon-search" type="search" color="#666666"></uni-icons>
-			<uni-icons class="icon icon-close" type="close" color="#666666" v-if="value" @click="clear"></uni-icons>
+			<view class="icon icon-search">
+				<fs-icon type="icon-search" color="#666666"></fs-icon>
+			</view>
+			<view class="icon icon-close" v-if="value" @click="clear">
+				<fs-icon type="icon-close" color="#666666"></fs-icon>
+			</view>
 		</view>
 		<view class="cancel" :class="[actionColorType]" :style="{color:actionColor}" @click="handleAction" v-if="showAction">{{actionText}}</view>
 	</view>

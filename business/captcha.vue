@@ -2,7 +2,7 @@
 	<view>
 		<fs-field border placeholder="请输入手机号" type="number" v-model="phone" maxlength=11></fs-field>
 		<fs-field border type="number" placeholder="请输入验证码" v-model="code" maxlength=6>
-			<fs-button slot="after" radius type="primary" plain round @click="getCaptcha" :disabled="sending" width="170rpx">{{timerText}}</fs-button>
+			<fs-button slot="after" size="medium" radius type="primary" plain round @click="getCaptcha" :disabled="sending" width="170rpx">{{timerText}}</fs-button>
 		</fs-field>
 	</view>
 </template>

@@ -1,6 +1,14 @@
 <template>
 	<view class="text-center">
-		<scroll-view class="tab" :class="[type, colorType, {center, round, sticky, gutter}]" :scroll-x="scrollable" enable-flex :style="{'background-color':bgColor}">
+		<scroll-view class="tab" 
+		:class="[
+			type, 
+			colorType, 
+			center ? 'center' : '',
+			round ? 'round' : '',
+			sticky ? 'sticky' : '',
+			gutter ? 'gutter-v' : '',
+		]" :scroll-x="scrollable" enable-flex :style="{'background-color':bgColor}">
 			<view class="tab-item" :class="[type+'-item', type + '-item-' + colorType, {active: index == curIndex}]" :style="itemStyle"
 			 v-for="(item, index) in items" @click="setActive(index)">
 				{{item.text}}
@@ -12,9 +20,6 @@
 
 <script>
 	export default {
-		model: {
-			prop: 'active'
-		},
 		props: {
 			color: String,
 			bgColor: {
@@ -42,7 +47,7 @@
 			round: Boolean,
 			sticky: Boolean,
 			gutter: Boolean,
-			active: {
+			value: {
 				type: [String, Number],
 				default: 0
 			}
@@ -62,7 +67,7 @@
 				}
 			},
 			curIndex() {
-				return this.active
+				return this.value
 			}
 		},
 		methods: {
@@ -236,7 +241,7 @@
 		top: 0;
 	}
 
-	.gutter {
+	.gutter-v {
 		margin-bottom: var(--gutter);
 	}
 
