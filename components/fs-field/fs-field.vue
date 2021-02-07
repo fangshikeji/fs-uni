@@ -6,9 +6,20 @@
 				{{label}}
 			</view>
 			<slot name="before"></slot>
-			<textarea class="textarea" :name="name" :placeholder="placeholder" placeholder-class="ph-class"
-			 :placeholder-class="phClass" :maxlength="maxlength" :disabled="disabled" :value="value" :auto-height="autoHeight"
-			 @input="handleInput" @focus="focus" @blur="blur" @confirm="confirm">
+			<textarea 
+				class="textarea" 
+				:name="name" 
+				:placeholder="placeholder"
+			 	:placeholder-class="phClass" 
+			 	:maxlength="maxlength" 
+			 	:disabled="disabled" 
+				:value="value" 
+				:auto-height="autoHeight"
+				@input="handleInput" 
+				@focus="focus" 
+				@blur="blur" 
+				@confirm="confirm"
+			>
 		  </textarea>
 			<fs-icon class="icon icon-close" type="icon-guanbi2fill" size="20px" @touchstart="clear" v-if="clearable"></fs-icon>
 			<slot name="after"></slot>
@@ -20,9 +31,21 @@
 				{{label}}
 			</view>
 			<slot name="before"></slot>
-			<input class="input" :class="{clearable}" :value="value" :type="type" :placeholder="placeholder" placeholder-class="ph-class"
-			 :placeholder-class="phClass" :name="name" :maxlength="maxlength" :disabled="disabled" @input="handleInput" @focus="focus"
-			 @blur="blur" @confirm="confirm" />
+			<input 
+				class="input" 
+				:class="{clearable}" 
+				:value="value" 
+				:type="type" 
+				:placeholder="placeholder"
+			 	:placeholder-class="phClass" 
+				:name="name" 
+				:maxlength="maxlength" 
+				:disabled="disabled" 
+				@input="handleInput" 
+				@focus="focus"
+			 	@blur="blur" 
+				@confirm="confirm" 
+			/>
 			<fs-icon class="icon icon-close" type="icon-guanbi2fill" size="20px" @touchstart="clear" v-if="clearable"></fs-icon>
 			<slot name="after"></slot>
 		</view>
@@ -34,7 +57,10 @@
 		props: {
 			placeholder: String,
 			value: String,
-			phClass: String,
+			phClass: {
+				type: String,
+				default: 'ph-class'
+			},
 			name: String,
 			type: {
 				type: String,
