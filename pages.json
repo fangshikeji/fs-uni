@@ -238,6 +238,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/index/icon",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "图标",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

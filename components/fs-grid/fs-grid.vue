@@ -44,6 +44,7 @@
 }
 .border{
 	border: 1px solid var(--border-color);
+	border-bottom: none;
 }
 </style>
 

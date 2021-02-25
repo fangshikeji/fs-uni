@@ -22,8 +22,16 @@
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
+	position: relative;
+	height: 100%;
 }
-.border{
+.border::before{
+	position: absolute;
+	content: '';
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	border: 1px solid var(--border-color);
 	margin-left: -1px;
 	margin-top: -1px;

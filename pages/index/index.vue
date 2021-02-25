@@ -19,6 +19,7 @@
 		  <fs-cell slot="content" border arrow link="./popup" title="Popup 弹出层"></fs-cell>
 		  <fs-cell slot="content" border arrow link="./tab" title="Tab 标签页"></fs-cell>
 		  <fs-cell slot="content" border arrow link="./timeline" title="Timeline 时间轴"></fs-cell>
+		  <fs-cell slot="content" border arrow link="./icon" title="Icon 图标"></fs-cell>
 		  <fs-cell slot="content" arrow link="./nodata" title="Nodata 无数据"></fs-cell>
 		</fs-panel>
 		
