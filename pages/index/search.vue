@@ -8,6 +8,9 @@
 		</fs-panel>
 		<fs-panel title="自定义操作文字及颜色">
 		  <fs-search slot="content" showAction></fs-search>
+		  <fs-search slot="content" showAction>
+				<fs-icon slot="icon" type="icon-right" color="#666666"></fs-icon>
+			</fs-search>
 		  <fs-search slot="content" showAction actionText="搜索" action-color-type="primary"></fs-search>
 		</fs-panel>
 		<fs-panel title="自定义背景色">

@@ -220,6 +220,15 @@
             }
             
         }
+				,{
+				    "path" : "pages/index/nodata",
+				    "style" :                                                                                    
+				    {
+				        "navigationBarTitleText": "无数据",
+				        "enablePullDownRefresh": false
+				    }
+				    
+				}
         ,{
             "path" : "pages/layout/layout",
             "style" :                                                                                    

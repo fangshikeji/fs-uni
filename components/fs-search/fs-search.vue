@@ -5,7 +5,9 @@
 			<input v-else :type="type" :placeholder="placeholder" @input="change" v-model="value" @focus="focus" @blur="blur" :focus="autoFocus"
 			 class="input" />
 			<view class="icon icon-search">
-				<fs-icon type="icon-search" color="#666666"></fs-icon>
+				<slot name="icon">
+					<fs-icon type="icon-search" color="#666666"></fs-icon>
+				</slot>
 			</view>
 			<view class="icon icon-close" v-if="value" @click="clear">
 				<fs-icon type="icon-close" color="#666666"></fs-icon>

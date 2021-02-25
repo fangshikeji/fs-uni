@@ -6,11 +6,12 @@
 </template>
 
 <script>
+	import nodata from './nodata.png'
 	export default {
 		props: {
 			src: {
 				type: String,
-				default: '/static/images/nodata/1.png'
+				default: nodata
 			},
 			text: {
 				type: String,
