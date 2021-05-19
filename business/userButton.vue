@@ -1,87 +1,104 @@
 <template>
-  <button
-    hover-class="hover"
-    :open-type="openType"
-    class="button"
-    :class="[
-      cls,
-      type,
-      size,
-      plain ? 'plain' : '',
-      radius ? 'radius' : '',
-      round ? 'round' : '',
-      disabled ? 'disabled' : '',
-      block ? 'block' : '',
-      value ? 'selected' : '',
-    ]"
-    :style="[
-      { 'margin-right': gutter, 'margin-bottom': gutter, width: width },
-      customStyle,
-    ]"
-    :form-type="formType"
-    @getuserinfo="getUserInfo"
-    @contact="contact"
-    @getphonenumber="getPhoneNumber"
-    @opensetting="openSetting"
-    @error="error"
-    @click="handleTap"
-  >
-    <slot></slot>
-  </button>
+  <view>
+    <button
+      wx:if="canIUseGetUserProfile"
+      hover-class="hover"
+      class="button"
+      :class="[
+        cls,
+        type,
+        size,
+        plain ? 'plain' : '',
+        radius ? 'radius' : '',
+        round ? 'round' : '',
+        disabled ? 'disabled' : '',
+        block ? 'block' : '',
+      ]"
+      :style="[
+        { 'margin-right': gutter, 'margin-bottom': gutter, width: width },
+        customStyle,
+      ]"
+      @click="handleTap"
+    >
+      <slot></slot>
+    </button>
+
+    <button
+      wx:else
+      hover-class="hover"
+      :open-type="openType"
+      class="button"
+      :class="[
+        cls,
+        type,
+        size,
+        plain ? 'plain' : '',
+        radius ? 'radius' : '',
+        round ? 'round' : '',
+        disabled ? 'disabled' : '',
+        block ? 'block' : '',
+        value ? 'selected' : '',
+      ]"
+      :style="[
+        { 'margin-right': gutter, 'margin-bottom': gutter, width: width },
+        customStyle,
+      ]"
+      @getuserinfo="getUserInfo"
+    >
+      <slot></slot>
+    </button>
+  </view>
 </template>
 
 <script>
 export default {
   props: {
-    openType: String,
-    formType: String,
+    desc: {
+      type: String,
+      default: '用于完善会员资料'
+    },
     size: {
       type: String,
       default: 'default'
     },
     type: {
       type: String,
-      default: 'default'
+      default: 'primary'
     },
     plain: Boolean,
     radius: Boolean,
     round: Boolean,
     disabled: Boolean,
     full: Boolean,
-    block: Boolean,
-    name: [String, Object],
-    link: String,
-    linkType: {
-      type: String,
-      default: 'navigateTo'
+    block: {
+      type: Boolean,
+      default: true
     },
+    name: [String, Object],
     width: String,
     customStyle: {
       type: Object,
       default: () => {
         return {}
-      }
-    }
+      },
+    },
   },
-  // inject: ['buttonGroup'],
   data() {
     return {
       gutter: '',
-      value: ''
+      value: '',
+      canIUseGetUserProfile: false,
     };
   },
   created() {
-    const buttonGroup = this.buttonGroup
-    if(buttonGroup) {
-      buttonGroup.children.push(this)
-      buttonGroup[`${buttonGroup.type}Strategy`]()
-      this.gutter = buttonGroup.gutter
+    if (wx.getUserProfile) {
+      this.canIUseGetUserProfile = true
     }
   },
   computed: {
     cls() {
-      const { full } = this.$props;
-      const classNames = [];
+      const { full } = this.$props
+      const classNames = []
       full && classNames.push('block full')
 
       return classNames.join(' ')
@@ -91,47 +108,13 @@ export default {
     getUserInfo(event) {
       this.$emit('getuserinfo', event.detail)
     },
-    contact(event) {
-      this.$emit('contact', event.detail)
-    },
-    getPhoneNumber(event) {
-      this.$emit('getphonenumber', event.detail)
-    },
-    openSetting(event) {
-      this.$emit('opensetting', event.detail)
-    },
-    error(event) {
-      this.$emit('error', event.detail)
-    },
-    radioStrategy() {
-      if (!this.value) {
-        this.buttonGroup.selectedValue = this.name
-      } else {
-        this.buttonGroup.selectedValue = []
-      }
-    },
-    checkboxStrategy() {
-      const parentValue = this.buttonGroup.selectedValue
-      const { value, name } = this
-      const index = parentValue.indexOf(name)
-      if (!value) {
-        if (index === -1) {
-          parentValue.push(name)
-        }
-      } else {
-        index !== -1 && parentValue.splice(index, 1)
-      }
-
-      this.buttonGroup.selectedValue = parentValue
-    },
     handleTap(e) {
-      this.buttonGroup && this[`${this.buttonGroup.type}Strategy`]()
-      if (this.link && !this.disabled) {
-        uni[this.linkType]({
-          url: this.link
-        })
-      }
-      !this.disabled && this.$emit('click')
+      wx.getUserProfile({
+        desc: this.desc,
+        success: (res) => {
+          this.$emit('getuserinfo', res)
+        },
+      })
     }
   }
 }

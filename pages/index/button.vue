@@ -123,7 +123,7 @@
 			</view>
 		</fs-panel>
 		
-		
+		<userButton>获取用户新消息</userButton>
 		<!-- <fs-panel title="按钮组选择(单选)" gutter>
 		  <view slot="content">
 		    <fs-button-group :value="['1']" gutter="10px" bind:change="buttonChange">
@@ -148,7 +148,11 @@
 </template>
 
 <script>
+import { userButton } from "@/business/userButton.vue";
 	export default {
+		components: {
+			userButton
+		},
 		data() {
 			return {
 			};
